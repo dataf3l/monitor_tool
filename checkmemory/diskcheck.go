@@ -103,7 +103,7 @@ func CheckFreeDiskSpace() {
 		panic(err)
 	}
 
-	if freeSpace > free {
+	if freeSpace < free {
 		subject := "DISK SPACE FULL"
 		// body := fmt.Sprintf("You have  used %f GB disk space and %f GB is free, please free some space for the server to continue ", usedSpace, freeSpace)
 		body := fmt.Sprintf("You are currently using %f%% of your available memory", usedSpace/totalDisk*100)
